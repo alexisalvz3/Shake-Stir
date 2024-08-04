@@ -3,5 +3,5 @@ __pycache__/
 *.pem
 venv/
 .env
-logs/
-.logbackend/logs/
+backend/logs/
+frontend/dist/
