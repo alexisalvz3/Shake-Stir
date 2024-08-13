@@ -6,7 +6,9 @@ function App() {
   const [message, setMessage] = useState('')
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/api/hello`)
+    const apiUrl = 'http://127.0.0.1:5000';
+    console.log('VITE_API_URL:', apiUrl);
+    axios.get(apiUrl)
       .then(response => setMessage(response.data.message))
       .catch(error => console.error('Error:', error))
   }, [])

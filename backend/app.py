@@ -19,8 +19,13 @@ app.logger.addHandler(file_handler)
 app.logger.setLevel(logging.INFO)
 app.logger.info('MyApp startup')
 
-@app.route('/api/hello')
+@app.route('/')
 def hello():
+    app.logger.info('Hello endpoint was accessed')
+    return jsonify(message="Hello from default Flask Route!")
+
+@app.route('/api/hello')
+def helloapi():
     app.logger.info('Hello endpoint was accessed')
     return jsonify(message="Hello from Flask!")
 
